@@ -22,7 +22,7 @@
 
 <div class="container">
     <div class="page-header">
-        <h1>Videos</h1>
+        <h1>eideos</h1>
     </div>
     <div class="row">
         <?php
