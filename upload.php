@@ -17,9 +17,9 @@
                         <div class="col-lg-10">
                             <div class="btn-group">
                                 <a class="btn btn-default">Thumbnail</a>
-                <span class="btn btn-primary btn-file">
-                    Browse&hellip; <input type="file" name="thumb" id="thumb" class="form-control" required>
-                </span>
+                                <span class="btn btn-primary btn-file">
+                                    Browse&hellip; <input type="file" name="thumb" id="thumb" class="form-control" required>
+                                </span>
                             </div>
                         </div>
                 </div>
