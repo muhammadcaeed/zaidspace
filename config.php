@@ -4,7 +4,7 @@ if(!$con)
 {
     die("Error:" .mysql_error());
 }
-$db=mysql_select_db("zaidalit", $con);
+$db=mysql_select_db("videos", $con);
 if(!$db)
 {
     die("Error: Database not selected.");
