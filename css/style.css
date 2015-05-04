@@ -14,7 +14,44 @@
     color:white;
 }
 
-
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(255, 255, 255, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: rgba(66, 139, 202, 1);
+    border-width: 0px;
+    border-radius: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(66, 139, 202, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(26, 105, 173, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(26, 105, 173, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #1a69ad;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #1a69ad;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #1a69ad;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #428bca;
+}
 
 .bs-callout {
     padding: 20px;
@@ -134,4 +171,41 @@
     background: white;
     cursor: inherit;
     display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:#428bca;
+}
+
+#foot {
+    min-height: 50px;
+    background-color:#0f2d38;
+}
+
+#foot ul {
+    list-style-type: none;
+}
+
+#foot ul li {
+    float:left;
+    padding-top:15px;
+    padding-right:10px;
+ }
+
+#footd {
+    min-height: 50px;
+    background-color:#0f2d38;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#footd ul {
+    list-style-type: none;
+}
+
+#footd ul li {
+    float:left;
+    padding-top:15px;
+    padding-right:10px;
 }

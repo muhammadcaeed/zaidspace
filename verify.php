@@ -7,7 +7,7 @@
             $un=$_POST['user'];
             $pa=$_POST['pass'];
 
-            $strqry="select * from adminpanel where user='".$un."' and pass='".$pa."'";
+            $strqry="select * from login where username='".$un."' and password='".$pa."'";
             $data=mysql_query($strqry);
             $b=mysql_num_rows($data);
             if($b>0)

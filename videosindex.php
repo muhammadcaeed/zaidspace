@@ -39,7 +39,7 @@ if(isset($_POST['submit']))
     $temp = $_FILES['file']['tmp_name'];
 
     move_uploaded_file($temp,"uploaded/".$name);
-    $url = "http://localhost/zaidspace/uploaded/$name";
+    $url = "uploaded/$name";
 
     $sql = "INSERT INTO video(id,name,path) VALUES ('','$name','$url')";
     $ret = mysql_query( $sql, $con );

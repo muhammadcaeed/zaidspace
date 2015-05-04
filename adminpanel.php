@@ -1,6 +1,15 @@
 <?php include 'admin_header.php'; include 'admin_nav.php'; ?>
 <div class="container">
     <?php
+        if(isset($_GET['adminpanel']) == 'upload'){
+            $a=$_GET['adminpanel'];
+            include $a.'.php';
+        }
+        elseif(isset($_GET['adminpanel']) == 'logout'){
+            $a=$_GET['adminpanel'];
+            include $a.'.php';
+        }
+        else {
     if(isset($_GET['id'])){ ?>
         <div class="alert alert-danger" role="alert">
             <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -19,9 +28,6 @@
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">Videos</div>
-        <div class="panel-body">
-
-        </div>
 
         <?php
         $qry="SELECT *
@@ -36,24 +42,31 @@
         { ?> <table class="table">
             <tr>
                 <th>ID</th>
-                <th>Video</th>
-                <th>Path</th>
-                <th>Thumbnail
-                <th>Type</th>
+                <th>Name</th>
+                <th>Thumbnail</th>
+                <th>Category</th>
                 <th>Options</th>
             </tr>
-           <?php  while($row=mysql_fetch_array($data)) { ?>
-               <tr>
-                   <td><?php echo $row['id']; ?></td>
-                   <td><?php echo $row['name']; ?></td>
-                   <td><?php echo $row['path']; ?></td>
-                   <td><?php echo $row['thumb']; ?></td>
-                   <td><?php echo $row['typ']; ?></td>
-                   <td><a href="delete.php?de=<?php echo $row['id']; ?>"><button class="btn btn-sm btn-danger">DELETE</button></a></td>
-               </tr>
+            <?php  while($row=mysql_fetch_array($data)) { ?>
+                <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><img src="<?php echo $row['thumb']; ?>" width="30"></td>
+                    <?php
+                    $cid = $row['cat_id'];
+                    $qu = "SELECT * FROM category WHERE cat_id = '" . $cid . "'";
+                    $ru = mysql_query($qu) or die(mysql_error());
+                    $cc = mysql_fetch_array($ru);
+                    ?>
+                    <td><?php echo $cc['cat_name']; ?></td>
+                    <td><a href="delete.php?de=<?php echo $row['id']; ?>"><button class="btn btn-sm btn-danger">DELETE</button></a></td>
+                </tr>
 
-        <?php } } ?>
+            <?php } } ?>
         </table>
     </div>
+       <?php } ?>
+
+
 </div>
 </body>

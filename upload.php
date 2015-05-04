@@ -1,8 +1,8 @@
-<?php include 'admin_header.php'; include 'admin_nav.php'; ?>
+<?php// include 'admin_header.php'; include 'admin_nav.php'; ?>
 <div class="container middle">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form class="form-horizontal" role="form" method="post" action="uploading.php">
+            <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="uploading.php">
                 <fieldset>
                     <legend>Upload Video</legend>
 
@@ -11,6 +11,27 @@
 
                         <div class="col-lg-10">
                             <input id="vname" type="text" class="form-control" name="vname" placeholder="video name" required autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc" class="col-lg-2 control-label">Description</label>
+
+                        <div class="col-lg-10">
+                            <textarea id="desc" name="desc" class="form-control" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vname" class="col-lg-2 control-label">Type</label>
+
+                        <div class="col-lg-10">
+                            <?php
+                            $qry = "SELECT * FROM category";
+                            $result = mysql_query($qry) or die(mysql_error());
+                            while($row = mysql_fetch_array($result))
+                            { ?>
+                                <input id="typ" type="radio" name="typ" value="<?php echo $row['cat_id']; ?>" >&nbsp;<button class="btn btn-default btn-sm"><?php echo $row['cat_name']; ?></button>
+                            <?php }
+                            ?>
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,15 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="vname" class="col-lg-2 control-label">Type</label>
 
-                        <div class="col-lg-10">
-                            <input id="typ" type="checkbox" name="typ" value="latest" >&nbsp;<button class="btn btn-primary btn-sm">Latest</button>
-                            <input id="typ" type="checkbox" name="typ" value="featured" >&nbsp;<button class="btn btn-success btn-sm">Featured</button>
-                            <input id="typ" type="checkbox" name="typ" value="popular" >&nbsp;<button class="btn btn-danger btn-sm">Pouplar</button>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <button class="btn btn-primary btn-block" type="submit" name="btnSubmit">Submit</button>

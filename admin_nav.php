@@ -16,9 +16,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="upload.php">Upload</a></li>
-                    <li><a href="avideos.php">Videos</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="adminpanel.php?adminpanel=upload">Upload</a></li>
+                    <li><a href="adminpanel.php">Videos</a></li>
+                    <li><a href="adminpanel.php?adminpanel=logout">Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

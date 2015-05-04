@@ -23,29 +23,29 @@ if($er==0)
     move_uploaded_file($tn,"thumbnails/".$na);
 }
 
-$naa=$_FILES["thumb"]["name"];
-$tnn=$_FILES["thumb"]["tmp_name"];
-$err=$_FILES["thumb"]["error"];
+$naa=$_FILES["path"]["name"];
+$tnn=$_FILES["path"]["tmp_name"];
+$err=$_FILES["path"]["error"];
 
 if($err==0)
 {
     move_uploaded_file($tnn,"videos/".$naa);
 }
 
-?>
 
-<?php
 $name=$_POST["vname"];
+$desc=$_POST["desc"];
 $thumb=$na;
 $path=$naa;
-$typ=$_POST["typ"];
 $n="thumbnails/".$thumb;
-$m="vidoes/".$path;
-$strqry="insert into videos(name,path,thumb,typ) values('$name','$m','$n','$typ')";
+$m="videos/".$path;
+
+$typ=$_POST["typ"];
+
+$strqry="insert into videos(cat_id,name, desc, path,thumb) values('$typ','$name','$desc','$m','$n')";
 mysql_query($strqry);
 
 header('location:adminpanel.php?cc=created');
-
 ?>
 </body>
 </html>
